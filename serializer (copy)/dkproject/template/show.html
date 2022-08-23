@@ -1,0 +1,34 @@
+
+  <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Show Data</title>
+</head>
+<body>
+        <table border="1 px">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>City</th>
+                <th>Contact</th>
+                <th>Action1</th>
+                <th>Action2</th>
+            </tr>
+            {% for i in data %}
+          <tr>
+              <td>{{i.name}}</td>
+              <td>{{i.email}}</td>
+              <td>{{i.city}}</td>
+              <td>{{i.contact}}</td> 
+              <td><a href="{% url 'del' i.id%}">Delete</a></td>
+              <td><a href="{% url 'update' i.id %}">Update</a></td>
+             
+          </tr>
+          {% endfor %}
+     
+         </table>
+</body>
+<h1>deepak</h1>

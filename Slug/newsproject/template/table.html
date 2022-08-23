@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1px">
+        <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Slug</th>
+            <th>Action</th>
+        </tr>
+        {% for i in data %}
+        <tr>
+            <td>{{i.news_title}}</td>
+            <td>{{i.description}}</td>
+            <td>{{i.news_slug}}</td>
+            <td><a href="{% url 'newsslug' i.news_slug %}" >Data</a></td>
+
+        </tr>
+        {% endfor %}
+
+    </table>
+</body>
+</html>

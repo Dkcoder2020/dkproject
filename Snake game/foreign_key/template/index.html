@@ -1,0 +1,150 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Water Gun</title>
+    <style>
+        @import url(https://fonts.googleapis.com/css2?family=Potta+One&display=swap);
+        html{
+            
+            background-image: url('static/images/dk.jpg');
+            
+            min-height:500px;
+        }
+        body{
+            text-align:center;margin:0 0
+        }
+        h1{
+            font-size:4rem;color:#2bff00;
+            font-weight:700;
+            text-shadow:4px 3px #e6198f;
+            font-family:'Potta One',cursive}
+        #user{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            margin-top:100px}
+        
+        .choose{
+            width:33vw;
+            height:200px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            flex-direction:column}
+        
+        .choose img{
+            width:70%;
+            height:20vh}
+        
+        #show{
+            text-align:center;
+            justify-content:center;
+            align-items:center;
+            color:yellow;
+            font-weight:700;
+            text-shadow:2px 2px #e6198f}
+    
+
+         #show img{
+            height:100px;
+            width:120px}
+        
+        .button2{
+            border:none;
+            padding:10px;
+            font-size:2rem;
+            cursor:pointer;
+            border-radius:10px;
+            background-color:#942626;
+            color:#fff;
+            font-weight:700;
+            margin:20px}
+        
+        .button2:hover{
+            background-color:#f90000a8}
+
+        .button1{
+            border:none;
+            padding:10px;
+            font-size:2rem;
+            cursor:pointer;
+            border-radius:10px;
+            background-color: transparent;
+            backface-visibility: hidden;
+            font-weight:700;
+            margin:20px}
+        .button1:hover{
+            background-color:#2bff00}
+   
+        footer{
+            position:absolute;
+            text-align:center;
+            width:100%;
+            background-color:#2c4f82;color:azure;
+            margin-top:20px}
+                
+        footer a{text-decoration:none;
+                color:azure
+            }
+                                   
+        @media (min-width:200px) and (max-width:600px)
+        {
+            h1{font-size:2rem}
+        #user{
+            flex-direction:column;
+            margin-top:25px}
+        
+        .choose{
+            width:70vw;
+            height:120px}
+        }
+        #messsage{
+            color: black;
+        }
+
+
+    </style>
+</head>
+
+<body>
+   
+   
+
+    <form method="POST">
+        {% csrf_token %}
+    <h1>Snake Water Gun Game</h1>
+   
+    <div id="user">
+        <div class="choose" id="snake">
+            <button type="radio" class="button1" name="user" value="snake" > <img src="static/images/snake.png" alt=""></button>
+        </div>
+        <div class="choose" id="water">
+           <button type="radio" class="button1" name="user" value="water" > <img src="static/images/water.png" alt=""></button>
+        </div>
+        <div class="choose" id="gun">
+            <button type="radio" class="button1" name="user" value="gun" > <img src="static/images/gun.png" alt=""> </button>
+         
+        </div>  
+        
+    </div>
+   
+
+    <div id="show">
+      {% for i in messages %} 
+      <h2>{{i}}</h2>
+
+      {% endfor %}
+
+    </div>
+    <div class="again" > <button class="button2"  name="user" value="reset">Try Again</button> </div> 
+    </form> 
+</body></button> </div> 
+</form> 
+         
+</html>
+

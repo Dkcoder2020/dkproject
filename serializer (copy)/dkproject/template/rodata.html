@@ -1,0 +1,51 @@
+def send(request):
+    if request.method == 'POST':
+        id = request.POST['eid']
+        data1 = request.POST['edata1']
+        data2 = request.POST['edata2']
+        Deepak = Entry(eid=id,edata1=data1,edata2=data2)
+        Deepak.save()   
+        msg="Data Stored Successfully"
+        return render(request,"home.html",{'msg':msg})
+    else:
+        return HttpResponse("<h1> 404- not found</h1>") 
+
+
+
+        <!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Show Data</title>
+</head>
+<body>
+        <table border="1 px">
+            <thead>
+                <th>Name</th>
+                <th>Email</th>
+                <th>City</th>
+                <th>Contact</th>
+                <th>Action1</th>
+            </thead>
+          {% for i in data %}
+          <tr>
+              <td>{{i.name}}</td>
+              <td>{{i.email}}</td>
+              <td>{{i.city}}</td>
+              <td>{{i.contact}}</td> 
+              <td><a href="{% url 'delete' i.id %}">Delete</a></td>
+             
+
+          </tr>
+          {% endfor %}
+        </table>
+
+    </div>
+    
+    
+</body>
+</html>

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+<link rel="stylesheet" href="show.css">
+{% block content %}
+
+
+
+<table class="mytable" border="1"   style="margin-top:20%; margin-left:33%; background-color:aliceblue; border-collapse: collapse; border-color:black;" >
+    
+       
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Contact</th>
+        <th>Action1</th>
+        <th>Action2</th>
+
+    {% for i in obj %}
+    <tr>
+        <td>{{i.eid}}</td>
+        <td>{{i.ename}}</td>
+        <td>{{i.eemail}}</td>
+        <td>{{i.econtact}}</td>
+        <td><a href="{% url 'delete' i.id %}">delete</a></td>
+        <td><a href="{% url 'update' i.id %}">Edit</a></td>
+  
+    </tr>
+    {% endfor %}
+</table>
+</div>
+
+{% endblock %}

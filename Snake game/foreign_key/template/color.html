@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+	<title></title>
+
+</head>
+
+<body >
+
+
+
+	<form  method="post">
+
+    {% csrf_token %}
+
+     <input type="radio" name="color" value="Red" {% if key == 'Red'  %} checked="true" {% endif  %}>Red <br><br>
+
+     <input type="radio" name="color" value="Green" {% if key == 'Green'  %} checked="true" {% endif  %}>Green <br><br>
+
+     <input type="radio" name="color" value="Blue" {% if key == 'Blue'  %} checked="true" {% endif  %}>Blue <br><br>
+
+     <input type="submit" name="btnsubmit" value="Click" />
+
+
+
+	</form>
+
+{{key}}
+
+</body>
+
+</html>
+
+
+

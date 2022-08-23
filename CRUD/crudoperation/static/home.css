@@ -1,0 +1,24 @@
+.myBody{
+    background-color:aquamarine;
+}
+
+.Divtwo {
+  margin-left: 90%;
+}
+
+.Divone{
+    background-color: rgb(166, 174, 173);
+    max-width: fit-content;
+    padding:1%;
+    margin-left:35%;
+    margin-top: 15%;
+    border:1px solid black;
+}
+
+#btn{
+    margin-left:35%;
+}
+
+#id{
+    margin-left: 16%;
+}

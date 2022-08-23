@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+ 
+ 
+    <div class="myDiv" style="background-color:rgb(141, 138, 138); height:45%; width: 30%; margin-left:39%; margin-top:15%; border: 1px solid black">
+       
+         {% if obj1  %}
+ 
+            <form class="myForm" action="" method="POST" style="padding:9px;">
+                {% csrf_token %}
+
+                <label for="id">ID</label><br>
+                <input type="text" value="{{obj1.eid}}" id="eid" name="eid" placeholder="Enter ID" required><br><br>
+                <label for="name">Name</label><br>
+                <input type="text" value="{{obj1.ename}}" id="ename" name="ename" placeholder="Enter Name" required><br><br>
+                <label for="email">Email</label><br>
+                <input type="text" value="{{obj1.eemail}}" id="eemail" name="eemail" placeholder="Enter Email" required><br><br>
+                <label for="contact">Contact</label><br>
+                <input type="text" value="{{obj1.econtact}}" id="econtact" name="econtact" placeholder="Enter Contact" required><br><br>
+                <button on>update</button>
+                
+
+            </form>
+            {% endif %}
+
+        </div>
+
+{% endblock %}   
+    
+</body>
+</html>
